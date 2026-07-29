@@ -1,0 +1,40 @@
+body {
+    font-family: Arial, sans-serif;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+#upload-form {
+    margin-bottom: 20px;
+}
+
+.image-card {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+}
+
+.image-card img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.placeholder {
+    width: 100px;
+    height: 100px;
+    background: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+}
+
+.status {
+    color: #666;
+    font-size: 12px;
+}
