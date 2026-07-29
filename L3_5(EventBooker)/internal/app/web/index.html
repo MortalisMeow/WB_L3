@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>EventBooker</title>
+    <style>
+        body { font-family: Arial; max-width: 800px; margin: 20px auto; padding: 20px; }
+        input { display: block; margin: 5px 0; padding: 8px; width: 100%; box-sizing: border-box; }
+        button { padding: 8px 16px; margin: 5px 5px 5px 0; cursor: pointer; }
+        .card { border: 1px solid #ddd; padding: 15px; margin: 10px 0; }
+        .pending { color: orange; }
+        .confirmed { color: green; }
+        .cancelled { color: red; text-decoration: line-through; }
+    </style>
+</head>
+<body>
+<h1>EventBooker</h1>
+
+<div class="card">
+    <h2>Создать мероприятие</h2>
+    <input type="text" id="name" placeholder="Название">
+    <input type="datetime-local" id="date">
+    <input type="number" id="seats" placeholder="Количество мест" min="1">
+    <button onclick="create()">Создать</button>
+</div>
+
+<h2>Мероприятия</h2>
+<div id="list"></div>
+
+<script src="/static/app.js"></script>
+</body>
+</html>
