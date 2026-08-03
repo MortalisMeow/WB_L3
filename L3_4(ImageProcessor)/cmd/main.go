@@ -1,6 +1,7 @@
 package main
 
 import (
+	"WB/WB_L3/L3_5(EventBooker)/internal/app"
 	"context"
 	"log"
 	"net/http"
@@ -8,8 +9,6 @@ import (
 	"os/signal"
 	"syscall"
 	"time"
-
-	"imageprocessor/internal/app"
 )
 
 func main() {

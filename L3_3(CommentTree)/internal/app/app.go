@@ -50,10 +50,10 @@ func New() *App {
 		api.GET("/search", handler.Search)
 	}
 
-	fe, _ := fs.Sub(frontend, "frontend")
+	fe, _ := fs.Sub(frontend, "web")
 	router.StaticFS("/static", http.FS(fe))
 	router.GET("/", func(c *gin.Context) {
-		data, _ := frontend.ReadFile("frontend/index.html")
+		data, _ := frontend.ReadFile("web/index.html")
 		c.Data(http.StatusOK, "text/html; charset=utf-8", data)
 	})
 

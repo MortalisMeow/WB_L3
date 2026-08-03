@@ -34,7 +34,7 @@ func main() {
 	// UseCase (с двумя репозиториями)
 	uc := usecase.NewNotificationUseCase(statusRepo, queueRepo, snd)
 
-	// HTTP handler
+	// HTTP api
 	hdl := delivery.NewHandler(uc)
 
 	if err := queueRepo.Consume(func(n domain.Notification) error {

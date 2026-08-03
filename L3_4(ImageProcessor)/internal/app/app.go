@@ -4,7 +4,6 @@ import (
 	"context"
 	"database/sql"
 	"embed"
-	"github.com/segmentio/kafka-go"
 	"io/fs"
 	"log"
 	"net/http"
