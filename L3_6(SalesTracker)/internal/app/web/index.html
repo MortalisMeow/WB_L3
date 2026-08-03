@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>SalesTracker</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<h1>SalesTracker</h1>
+
+<section class="card">
+    <h2>Новая запись</h2>
+    <div class="form-row">
+        <select id="type">
+            <option value="income">Доход</option>
+            <option value="expense">Расход</option>
+        </select>
+        <input type="number" id="amount" placeholder="Сумма" min="0.01" step="0.01">
+        <input type="text" id="category" placeholder="Категория">
+        <input type="date" id="date">
+        <button onclick="createItem()">Добавить</button>
+    </div>
+</section>
+
+<section class="card">
+    <h2>Фильтры</h2>
+    <div class="form-row">
+        <input type="date" id="filter-from">
+        <input type="date" id="filter-to">
+        <select id="filter-type">
+            <option value="">Все типы</option>
+            <option value="income">Доход</option>
+            <option value="expense">Расход</option>
+        </select>
+        <input type="text" id="filter-category" placeholder="Категория">
+        <button onclick="loadAll()">Применить</button>
+        <a id="csv-link" href="#" class="btn-link">Скачать CSV</a>
+    </div>
+</section>
+
+<section class="card">
+    <h2>Записи</h2>
+    <table id="items-table">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Тип</th>
+            <th>Сумма</th>
+            <th>Категория</th>
+            <th>Дата</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</section>
+
+<section class="card">
+    <h2>Аналитика</h2>
+    <div id="stats" class="stats"></div>
+    <canvas id="chart" height="120"></canvas>
+</section>
+
+<script src="/static/app.js"></script>
+</body>
+</html>

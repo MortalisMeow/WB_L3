@@ -1,0 +1,101 @@
+body {
+    font-family: Arial, sans-serif;
+    max-width: 960px;
+    margin: 20px auto;
+    padding: 0 20px;
+    background: #f5f5f5;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 16px;
+    margin-bottom: 16px;
+}
+
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+}
+
+input, select, button {
+    padding: 8px;
+    font-size: 14px;
+}
+
+button {
+    cursor: pointer;
+    background: #2563eb;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+}
+
+button:hover {
+    background: #1d4ed8;
+}
+
+.btn-link {
+    padding: 8px 12px;
+    background: #16a34a;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border-bottom: 1px solid #eee;
+    padding: 8px;
+    text-align: left;
+}
+
+.income {
+    color: #16a34a;
+}
+
+.expense {
+    color: #dc2626;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.stat-box {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 4px;
+    padding: 10px;
+}
+
+.stat-box .label {
+    font-size: 12px;
+    color: #64748b;
+}
+
+.stat-box .value {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.del-btn {
+    background: #dc2626;
+    padding: 4px 8px;
+    font-size: 12px;
+}
