@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>WarehouseControl</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<h1>WarehouseControl</h1>
+
+<section class="card" id="login-section">
+    <h2>Вход</h2>
+    <div class="form-row">
+        <select id="role-select">
+            <option value="admin">Админ (полный доступ)</option>
+            <option value="manager">Менеджер (просмотр и редактирование)</option>
+            <option value="viewer">Наблюдатель (только просмотр)</option>
+        </select>
+        <button onclick="login()">Войти</button>
+    </div>
+</section>
+
+<section class="card hidden" id="user-section">
+    <div class="form-row">
+        <span id="user-info"></span>
+        <button class="secondary" onclick="logout()">Выйти</button>
+    </div>
+</section>
+
+<section class="card hidden" id="create-section">
+    <h2>Новый товар</h2>
+    <div class="form-row">
+        <input type="text" id="name" placeholder="Название">
+        <input type="text" id="sku" placeholder="SKU">
+        <input type="number" id="quantity" placeholder="Кол-во" min="0" value="0">
+        <input type="number" id="price" placeholder="Цена" min="0" step="0.01" value="0">
+        <input type="text" id="description" placeholder="Описание">
+        <button onclick="createItem()">Добавить</button>
+    </div>
+</section>
+
+<section class="card hidden" id="items-section">
+    <h2>Товары на складе</h2>
+    <table id="items-table">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Название</th>
+            <th>SKU</th>
+            <th>Кол-во</th>
+            <th>Цена</th>
+            <th>Описание</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</section>
+
+<section class="card hidden" id="history-section">
+    <h2>История изменений</h2>
+    <div class="form-row">
+        <input type="date" id="hist-from">
+        <input type="date" id="hist-to">
+        <input type="text" id="hist-user" placeholder="Пользователь">
+        <select id="hist-action">
+            <option value="">Все действия</option>
+            <option value="INSERT">INSERT</option>
+            <option value="UPDATE">UPDATE</option>
+            <option value="DELETE">DELETE</option>
+        </select>
+        <input type="number" id="hist-item-id" placeholder="ID товара" min="0">
+        <button onclick="loadHistory()">Применить</button>
+        <a id="csv-link" href="#" class="btn-link hidden">Скачать CSV</a>
+    </div>
+    <table id="history-table">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Товар</th>
+            <th>Действие</th>
+            <th>Кто</th>
+            <th>Когда</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</section>
+
+<div id="modal" class="modal hidden">
+    <div class="modal-content">
+        <h3 id="modal-title">История товара</h3>
+        <div id="modal-body"></div>
+        <button class="secondary" onclick="closeModal()">Закрыть</button>
+    </div>
+</div>
+
+<script src="/static/app.js"></script>
+</body>
+</html>
